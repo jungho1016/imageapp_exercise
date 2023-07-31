@@ -3,7 +3,9 @@ import 'package:imageapp_exercise/01_image_app/data/dto/pixabay_api_dto.dart';
 import 'package:imageapp_exercise/01_image_app/data/mapper/pixabay_api_mapper.dart';
 import 'package:imageapp_exercise/01_image_app/domain/model/photo.dart';
 import 'package:imageapp_exercise/01_image_app/domain/repository/pixabay_api_repository.dart';
+import 'package:injectable/injectable.dart';
 
+@Singleton(as: PixabayApiRepository)
 class PixabayApiRepositoryImple implements PixabayApiRepository {
   final PixabayApi _api = PixabayApi();
   @override

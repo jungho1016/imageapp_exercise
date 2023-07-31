@@ -24,6 +24,11 @@ mixin _$Photo {
   String get previewURL => throw _privateConstructorUsedError;
   num get id => throw _privateConstructorUsedError;
   String get tags => throw _privateConstructorUsedError;
+  String get user => throw _privateConstructorUsedError;
+  String get webformatURL => throw _privateConstructorUsedError;
+  num get likes => throw _privateConstructorUsedError;
+  String get userImageURL => throw _privateConstructorUsedError;
+  num get views => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -35,7 +40,16 @@ abstract class $PhotoCopyWith<$Res> {
   factory $PhotoCopyWith(Photo value, $Res Function(Photo) then) =
       _$PhotoCopyWithImpl<$Res, Photo>;
   @useResult
-  $Res call({String type, String previewURL, num id, String tags});
+  $Res call(
+      {String type,
+      String previewURL,
+      num id,
+      String tags,
+      String user,
+      String webformatURL,
+      num likes,
+      String userImageURL,
+      num views});
 }
 
 /// @nodoc
@@ -55,6 +69,11 @@ class _$PhotoCopyWithImpl<$Res, $Val extends Photo>
     Object? previewURL = null,
     Object? id = null,
     Object? tags = null,
+    Object? user = null,
+    Object? webformatURL = null,
+    Object? likes = null,
+    Object? userImageURL = null,
+    Object? views = null,
   }) {
     return _then(_value.copyWith(
       type: null == type
@@ -73,6 +92,26 @@ class _$PhotoCopyWithImpl<$Res, $Val extends Photo>
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as String,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as String,
+      webformatURL: null == webformatURL
+          ? _value.webformatURL
+          : webformatURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      likes: null == likes
+          ? _value.likes
+          : likes // ignore: cast_nullable_to_non_nullable
+              as num,
+      userImageURL: null == userImageURL
+          ? _value.userImageURL
+          : userImageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      views: null == views
+          ? _value.views
+          : views // ignore: cast_nullable_to_non_nullable
+              as num,
     ) as $Val);
   }
 }
@@ -83,7 +122,16 @@ abstract class _$$_PhotoCopyWith<$Res> implements $PhotoCopyWith<$Res> {
       __$$_PhotoCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String type, String previewURL, num id, String tags});
+  $Res call(
+      {String type,
+      String previewURL,
+      num id,
+      String tags,
+      String user,
+      String webformatURL,
+      num likes,
+      String userImageURL,
+      num views});
 }
 
 /// @nodoc
@@ -99,6 +147,11 @@ class __$$_PhotoCopyWithImpl<$Res> extends _$PhotoCopyWithImpl<$Res, _$_Photo>
     Object? previewURL = null,
     Object? id = null,
     Object? tags = null,
+    Object? user = null,
+    Object? webformatURL = null,
+    Object? likes = null,
+    Object? userImageURL = null,
+    Object? views = null,
   }) {
     return _then(_$_Photo(
       type: null == type
@@ -117,6 +170,26 @@ class __$$_PhotoCopyWithImpl<$Res> extends _$PhotoCopyWithImpl<$Res, _$_Photo>
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
               as String,
+      user: null == user
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as String,
+      webformatURL: null == webformatURL
+          ? _value.webformatURL
+          : webformatURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      likes: null == likes
+          ? _value.likes
+          : likes // ignore: cast_nullable_to_non_nullable
+              as num,
+      userImageURL: null == userImageURL
+          ? _value.userImageURL
+          : userImageURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      views: null == views
+          ? _value.views
+          : views // ignore: cast_nullable_to_non_nullable
+              as num,
     ));
   }
 }
@@ -128,7 +201,12 @@ class _$_Photo with DiagnosticableTreeMixin implements _Photo {
       {required this.type,
       required this.previewURL,
       required this.id,
-      required this.tags});
+      required this.tags,
+      required this.user,
+      required this.webformatURL,
+      required this.likes,
+      required this.userImageURL,
+      required this.views});
 
   factory _$_Photo.fromJson(Map<String, dynamic> json) =>
       _$$_PhotoFromJson(json);
@@ -141,10 +219,20 @@ class _$_Photo with DiagnosticableTreeMixin implements _Photo {
   final num id;
   @override
   final String tags;
+  @override
+  final String user;
+  @override
+  final String webformatURL;
+  @override
+  final num likes;
+  @override
+  final String userImageURL;
+  @override
+  final num views;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Photo(type: $type, previewURL: $previewURL, id: $id, tags: $tags)';
+    return 'Photo(type: $type, previewURL: $previewURL, id: $id, tags: $tags, user: $user, webformatURL: $webformatURL, likes: $likes, userImageURL: $userImageURL, views: $views)';
   }
 
   @override
@@ -155,7 +243,12 @@ class _$_Photo with DiagnosticableTreeMixin implements _Photo {
       ..add(DiagnosticsProperty('type', type))
       ..add(DiagnosticsProperty('previewURL', previewURL))
       ..add(DiagnosticsProperty('id', id))
-      ..add(DiagnosticsProperty('tags', tags));
+      ..add(DiagnosticsProperty('tags', tags))
+      ..add(DiagnosticsProperty('user', user))
+      ..add(DiagnosticsProperty('webformatURL', webformatURL))
+      ..add(DiagnosticsProperty('likes', likes))
+      ..add(DiagnosticsProperty('userImageURL', userImageURL))
+      ..add(DiagnosticsProperty('views', views));
   }
 
   @override
@@ -167,12 +260,20 @@ class _$_Photo with DiagnosticableTreeMixin implements _Photo {
             (identical(other.previewURL, previewURL) ||
                 other.previewURL == previewURL) &&
             (identical(other.id, id) || other.id == id) &&
-            (identical(other.tags, tags) || other.tags == tags));
+            (identical(other.tags, tags) || other.tags == tags) &&
+            (identical(other.user, user) || other.user == user) &&
+            (identical(other.webformatURL, webformatURL) ||
+                other.webformatURL == webformatURL) &&
+            (identical(other.likes, likes) || other.likes == likes) &&
+            (identical(other.userImageURL, userImageURL) ||
+                other.userImageURL == userImageURL) &&
+            (identical(other.views, views) || other.views == views));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, type, previewURL, id, tags);
+  int get hashCode => Object.hash(runtimeType, type, previewURL, id, tags, user,
+      webformatURL, likes, userImageURL, views);
 
   @JsonKey(ignore: true)
   @override
@@ -193,7 +294,12 @@ abstract class _Photo implements Photo {
       {required final String type,
       required final String previewURL,
       required final num id,
-      required final String tags}) = _$_Photo;
+      required final String tags,
+      required final String user,
+      required final String webformatURL,
+      required final num likes,
+      required final String userImageURL,
+      required final num views}) = _$_Photo;
 
   factory _Photo.fromJson(Map<String, dynamic> json) = _$_Photo.fromJson;
 
@@ -205,6 +311,16 @@ abstract class _Photo implements Photo {
   num get id;
   @override
   String get tags;
+  @override
+  String get user;
+  @override
+  String get webformatURL;
+  @override
+  num get likes;
+  @override
+  String get userImageURL;
+  @override
+  num get views;
   @override
   @JsonKey(ignore: true)
   _$$_PhotoCopyWith<_$_Photo> get copyWith =>

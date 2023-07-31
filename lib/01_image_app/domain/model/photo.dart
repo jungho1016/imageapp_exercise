@@ -11,7 +11,12 @@ class Photo with _$Photo {
       {required String type,
       required String previewURL,
       required num id,
-      required String tags}) = _Photo;
+      required String tags,
+      required String user,
+      required String webformatURL,
+      required num likes,
+      required String userImageURL,
+      required num views}) = _Photo;
 
   factory Photo.fromJson(Map<String, Object?> json) => _$PhotoFromJson(json);
 }

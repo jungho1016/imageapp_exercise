@@ -2,7 +2,9 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as http;
 import 'package:imageapp_exercise/01_image_app/data/dto/pixabay_api_dto.dart';
+import 'package:injectable/injectable.dart';
 
+@singleton
 class PixabayApi {
   Future<PixabayApiDto> getImage(String query) async {
     final url =

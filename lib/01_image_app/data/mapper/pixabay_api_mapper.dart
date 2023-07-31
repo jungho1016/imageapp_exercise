@@ -7,6 +7,11 @@ extension ToPhoto on Hits {
         type: type ?? '',
         previewURL: previewURL ?? '',
         id: id ?? 0,
-        tags: tags ?? '');
+        tags: tags ?? '',
+        user: user ?? '',
+        webformatURL: webformatURL ?? '',
+        likes: likes ?? 0,
+        userImageURL: userImageURL ?? '',
+        views: views ?? 0);
   }
 }
